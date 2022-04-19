@@ -1,2 +1,2 @@
 # fclip
-CLI form of copy, cut and paste in graphical manager
+CLI form of GUI file manager's copy, cut and paste operations
