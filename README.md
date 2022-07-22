@@ -1,16 +1,16 @@
 # fclip
-CLI form of GUI file manager's copy, cut and paste operations
+CLI form of GUI file manager's copy, cut and paste operations  
 
-## requirements
-* [fd](https://github.com/sharkdp/fd)
-* [fzf](https://github.com/junegunn/fzf)
+GUI Clipboard emulation in command line
 
-## optional (but highly recommended)
-* any of the quick navigation command-line utilities
-  * [autojump](https://github.com/wting/autojump)
-  * [fasd](https://github.com/clvv/fasd)
-  * [jump](https://github.com/gsamokovarov/jump)
-  * [z](https://github.com/rupa/z)
-  * [zsh-z](https://github.com/agkozak/zsh-z)
-  * [z.lua](https://github.com/skywind3000/z.lua)
-  * [zoxide](https://github.com/ajeetdsouza/zoxide)
+Approach:
+* Select a group of items for copying or moving
+* We select that group of items in a particular directory
+* So, we take note of the directory where we selected items for copying/moving
+* We also take note of the selected items
+* Operation could be either copy (or) move, hence take note of teh operation as well
+* While pasting, if there are items in the clipboard, they would get pasted, otherwise not
+* So, we need to check if there are items selected for copying (or) moving
+* So for the above reasons, we need to keep the list of items persistent, since we could select them for copy/move at some instant of time and paste them in another directory at some other instant of time, which could be a lot later than the timestamp at which the items had been selected
+* So we write the above 3 details (operation, source directory, list of items) to a file, and then refer the file for pasting
+* The file used for the above purpose is known as the clip file
