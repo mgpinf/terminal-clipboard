@@ -1,4 +1,4 @@
-# fclip
+# terminal-clipboard
 ### CLI form of GUI file manager's copy, cut and paste operations  
 
 ### GUI Clipboard emulation in command line
